@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        function getComputerChoice() {
+            const choices = ["rock", "paper", "scissors"];
+            return  choices[~~(Math.random() * choices.length)];
+        }
+        function playRound(playerSelection, computerSelection) {
+           if (playerSelection == "rock" && computerSelection == "scissors") {
+            return "rock win";
+           }
+           else if (playerSelection == "rock" && computerSelection == "paper") { 
+            return "rock loss";
+           } 
+           else if  (playerSelection == "rock" && computerSelection == "rock") 
+            return "rock tie";
+           
+
+           if (playerSelection == "scissors" && computerSelection == "paper") {
+            return "scissor win"; 
+           }
+           else if (playerSelection == "scissors" && computerSelection == "rock") { 
+            return "scissor loss";
+           } 
+           else if  (playerSelection == "scissors" && computerSelection == "scissors") 
+            return "scissor tie";
+
+           if (playerSelection == "paper" && computerSelection == "rock") {
+            return "paper win"; 
+           }
+           else if (playerSelection == "paper" && computerSelection == "scissors") { 
+            return "paper loss";
+           } 
+           else if  (playerSelection == "paper" && computerSelection == "paper") 
+            return "paper tie";
+        }
+     
+
+        
+        function game() {
+            let winCount = 0;
+            let lossCount = 0;
+
+            for (let i = 0; i < 5; i++) {
+                const playerSelection = prompt("Choose rock paper or scissors");
+                const computerSelection = getComputerChoice();
+                if (playRound(playerSelection.toLowerCase(),computerSelection) == "rock win") {
+                    console.log("You win! Rock beats Scissors");
+                    winCount++;
+                }
+                else if (playRound(playerSelection.toLowerCase(), computerSelection) == "rock loss") {
+                    console.log("You lose! Paper beats Rock");
+                    lossCount++;
+                }
+                else if (playRound(playerSelection.toLowerCase(), computerSelection) == "rock tie") {
+                    console.log("You tied! Rock doesn't beat or lose to Rock");
+                }
+
+                if (playRound(playerSelection.toLowerCase(),computerSelection) == "scissor win") {
+                    console.log("You win! Scissors beats Paper");
+                    winCount++;
+                }
+                else if (playRound(playerSelection.toLowerCase(), computerSelection) == "scissor loss") {
+                    console.log("You lose! Rock beats Scissors");
+                    lossCount++;
+                }
+                else if (playRound(playerSelection.toLowerCase(), computerSelection) == "scissor tie") {
+                    console.log("You tied! Scissors doesn't beat or lose to Scissors");
+                }
+
+                if (playRound(playerSelection.toLowerCase(),computerSelection) == "paper win") {
+                    console.log("You win! Paper beats Rock");
+                    winCount++;
+                }
+                else if (playRound(playerSelection.toLowerCase(), computerSelection) == "paper loss") {
+                    console.log("You lose! Scissors beats Paper");
+                    lossCount++;
+                }
+                else if (playRound(playerSelection.toLowerCase(), computerSelection) == "paper tie") {
+                    console.log("You tied! Paper doesn't beat or lose to Paper");
+                }
+                
+            
+            }
+            if (winCount > lossCount) {
+                console.log("You beat the computer " + winCount + "-" + lossCount + " congratulations!");
+            }
+            else if (lossCount > winCount) {
+                console.log("You lost to the computer " + lossCount + "-" + winCount + " better luck next time");
+            }
+            else {
+                console.log("You tied with the computer run that back");
+            }
+        }
+        
+        game();
+        
+        
+    </Script>
+</body>
+</html> 
