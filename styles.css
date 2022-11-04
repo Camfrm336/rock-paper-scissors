@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+
+
+}
+.choices {
+    display: flex;
+    justify-content: space-around;
+}
+.roundCounter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.winsCounter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.tiesCounter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.lossesCounter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    
+}
+button {
+    padding: 8px 24px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+#result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.resultDisplay {
+    display: flex;
+    justify-content: space-around;
+}
