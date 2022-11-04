@@ -4,7 +4,6 @@ const winsDisplay = document.getElementById("wins")
 const tiesDisplay = document.getElementById("ties")
 const lossesDisplay = document.getElementById("losses")
 const resultDisplay = document.getElementById("result")
-const resetBTN = document.querySelector("reset")
 
 
 
@@ -21,6 +20,7 @@ let lossCount = 0
 
 possibleChoices.forEach(possibleChoices => possibleChoices.addEventListener("click", (e) => {
    userChoice = e.target.id
+   resultDisplay.innerHTML = ""
    userChoiceDisplay.innerHTML = userChoice.toUpperCase();
    generateComputerChoice()
    getResult()
